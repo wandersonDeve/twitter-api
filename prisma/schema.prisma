@@ -14,4 +14,15 @@ model User{
   username String @id
   password String
   displayName String
+  tweet Tweet[]
+}
+
+model Tweet{
+  id Int @id @default(autoincrement())
+  texto String
+  emoji String?
+  data_postagem DateTime @default(now())
+  curtidas Int
+  autor User @relation(fields: [autorId], references: [username])
+  autorId  String
 }
