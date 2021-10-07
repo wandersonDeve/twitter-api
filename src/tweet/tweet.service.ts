@@ -21,4 +21,17 @@ export class TweetsService {
   async create(data: Prisma.TweetCreateInput): Promise<Tweet> {
     return this.db.tweet.create({ data });
   }
+
+  async update(id: number, data: Prisma.TweetCreateInput): Promise<Tweet> {
+    return this.db.tweet.update({
+      where: {
+        id: id,
+      },
+      data: {
+        curtidas: {
+          increment: 1,
+        },
+      },
+    });
+  }
 }

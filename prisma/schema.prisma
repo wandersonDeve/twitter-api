@@ -22,6 +22,7 @@ model Tweet{
   texto String
   emoji String?
   data_postagem DateTime @default(now())
+  data_atualizacao DateTime @default(now())
   curtidas Int? @default(0)
   autor User? @relation(fields: [autorId], references: [username])
   autorId  String?
