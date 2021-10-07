@@ -13,7 +13,18 @@ export class UsersService {
 
   async findUnique(username: string): Promise<User> {
     const user = await this.db.user.findUnique({
-      where: { username },
+      where: {
+        username: username,
+      },
+      include: {
+        tweet: {
+          select: {
+            texto: true,
+            data_postagem: true,
+            curtidas: true,
+          },
+        },
+      },
     });
 
     if (!user) {

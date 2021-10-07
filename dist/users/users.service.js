@@ -19,7 +19,18 @@ let UsersService = class UsersService {
     }
     async findUnique(username) {
         const user = await this.db.user.findUnique({
-            where: { username },
+            where: {
+                username: username,
+            },
+            include: {
+                tweet: {
+                    select: {
+                        texto: true,
+                        data_postagem: true,
+                        curtidas: true,
+                    },
+                },
+            },
         });
         if (!user) {
             throw new common_1.NotFoundException();
