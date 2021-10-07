@@ -1,9 +1,9 @@
 import { Tweet } from '.prisma/client';
 import { CreateTweetDto } from './tweet.dto';
 import { TweetsService } from './tweet.service';
-export declare class UsersController {
+export declare class TweetsController {
     private service;
     constructor(service: TweetsService);
-    findUnique(id: Number): Promise<Tweet>;
+    findUnique(id: number): Promise<Tweet>;
     create(data: CreateTweetDto): Promise<Tweet>;
 }

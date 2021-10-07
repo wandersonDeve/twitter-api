@@ -16,17 +16,17 @@ let TweetsService = class TweetsService {
     constructor(db) {
         this.db = db;
     }
-    async findUnique(tweetId) {
+    async findUnique(id) {
         const tweet = await this.db.tweet.findUnique({
-            where: { TweetId },
+            where: { id },
         });
         if (!tweet) {
-            throw new NotFoundException();
+            throw new common_1.NotFoundException();
         }
         return tweet;
     }
     async create(data) {
-        const tweet = await this.db.tweet.create({ data });
+        return this.db.tweet.create({ data });
     }
 };
 TweetsService = __decorate([

@@ -1,4 +1,10 @@
-import { IsOptional, IsString, Length } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Length,
+} from 'class-validator';
 
 export class CreateTweetDto {
   @IsString()
@@ -6,7 +12,12 @@ export class CreateTweetDto {
   texto: string;
 
   @IsOptional()
-  @IsString()
   @Length(2, 10)
-  emoji: string
+  emoji: string;
+
+  @IsNumber()
+  curtidas: number;
+
+  @IsOptional()
+  autorId: string;
 }

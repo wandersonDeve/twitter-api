@@ -23,6 +23,6 @@ model Tweet{
   emoji String?
   data_postagem DateTime @default(now())
   curtidas Int
-  autor User @relation(fields: [autorId], references: [username])
-  autorId  String
+  autor User? @relation(fields: [autorId], references: [username])
+  autorId  String?
 }

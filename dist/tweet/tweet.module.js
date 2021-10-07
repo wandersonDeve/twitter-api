@@ -15,8 +15,8 @@ let TweetModule = class TweetModule {
 };
 TweetModule = __decorate([
     (0, common_1.Module)({
-        providers: [tweet_service_1.TweetService, prisma_service_1.PrismaService],
-        controllers: [tweet_controller_1.TweetController],
+        providers: [tweet_service_1.TweetsService, prisma_service_1.PrismaService],
+        controllers: [tweet_controller_1.TweetsController],
     })
 ], TweetModule);
 exports.TweetModule = TweetModule;

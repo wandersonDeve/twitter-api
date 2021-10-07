@@ -12,12 +12,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersController = void 0;
+exports.TweetsController = void 0;
 const common_1 = require("@nestjs/common");
 const tweet_dto_1 = require("./tweet.dto");
 const tweet_service_1 = require("./tweet.service");
 const passport_1 = require("@nestjs/passport");
-let UsersController = class UsersController {
+let TweetsController = class TweetsController {
     constructor(service) {
         this.service = service;
     }
@@ -34,18 +34,18 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], UsersController.prototype, "findUnique", null);
+], TweetsController.prototype, "findUnique", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [tweet_dto_1.CreateTweetDto]),
     __metadata("design:returntype", Promise)
-], UsersController.prototype, "create", null);
-UsersController = __decorate([
+], TweetsController.prototype, "create", null);
+TweetsController = __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
     (0, common_1.Controller)('tweets'),
     __metadata("design:paramtypes", [tweet_service_1.TweetsService])
-], UsersController);
-exports.UsersController = UsersController;
+], TweetsController);
+exports.TweetsController = TweetsController;
 //# sourceMappingURL=tweet.controller.js.map

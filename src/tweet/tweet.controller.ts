@@ -6,11 +6,11 @@ import { AuthGuard } from '@nestjs/passport';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('tweets')
-export class UsersController {
+export class TweetsController {
   constructor(private service: TweetsService) {}
 
   @Get(':id')
-  findUnique(@Param('id') id: Number): Promise<Tweet> {
+  findUnique(@Param('id') id: number): Promise<Tweet> {
     return this.service.findUnique(id);
   }
 
