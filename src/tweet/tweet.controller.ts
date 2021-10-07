@@ -27,11 +27,8 @@ export class TweetsController {
     return this.service.create(data);
   }
 
-  @Put('/:id/curtir')
-  update(
-    @Body() updateTweet: CreateTweetDto,
-    @Param('id') id: number,
-  ): Promise<Tweet> {
-    return this.service.update(id, updateTweet);
+  @Put(':id/curtir')
+  update(@Param('id') id: number): Promise<Tweet> {
+    return this.service.update(id);
   }
 }

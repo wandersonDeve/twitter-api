@@ -27,8 +27,8 @@ let TweetsController = class TweetsController {
     create(data) {
         return this.service.create(data);
     }
-    update(updateTweet, id) {
-        return this.service.update(id, updateTweet);
+    update(id) {
+        return this.service.update(id);
     }
 };
 __decorate([
@@ -46,11 +46,10 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TweetsController.prototype, "create", null);
 __decorate([
-    (0, common_1.Put)('/:id/curtir'),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Param)('id')),
+    (0, common_1.Put)(':id/curtir'),
+    __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [tweet_dto_1.CreateTweetDto, Number]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], TweetsController.prototype, "update", null);
 TweetsController = __decorate([
