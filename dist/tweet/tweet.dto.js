@@ -24,6 +24,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateTweetDto.prototype, "emoji", void 0);
 __decorate([
+    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateTweetDto.prototype, "curtidas", void 0);

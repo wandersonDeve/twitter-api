@@ -15,6 +15,7 @@ export class CreateTweetDto {
   @Length(2, 10)
   emoji: string;
 
+  @IsOptional()
   @IsNumber()
   curtidas: number;
 
