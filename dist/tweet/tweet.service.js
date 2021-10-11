@@ -28,18 +28,6 @@ let TweetsService = class TweetsService {
     async create(data) {
         return this.db.tweet.create({ data });
     }
-    async update(id) {
-        return this.db.tweet.update({
-            where: {
-                id: id,
-            },
-            data: {
-                curtidas: {
-                    increment: 1,
-                },
-            },
-        });
-    }
 };
 TweetsService = __decorate([
     (0, common_1.Injectable)(),

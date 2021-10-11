@@ -5,4 +5,6 @@ export declare class UsersService {
     constructor(db: PrismaService);
     findUnique(username: string): Promise<User>;
     create(data: Prisma.UserCreateInput): Promise<User>;
+    update(username: string, data: Prisma.UserCreateInput): Promise<User>;
+    deleteOne(username: string): Promise<User>;
 }

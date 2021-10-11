@@ -14,19 +14,45 @@ const class_validator_1 = require("class-validator");
 class CreateUserDto {
 }
 __decorate([
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Date)
+], CreateUserDto.prototype, "createdAt", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Date)
+], CreateUserDto.prototype, "updatedAt", void 0);
+__decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.Length)(3, 30),
+    (0, class_validator_1.Length)(4, 30),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "username", void 0);
 __decorate([
+    (0, class_validator_1.IsEmail)(),
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.Length)(8, 30),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "email", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "img", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.Length)(8, 16),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "password", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.Length)(2, 50),
+    (0, class_validator_1.Length)(2, 40),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "displayName", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "birth", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "bio", void 0);
 exports.CreateUserDto = CreateUserDto;
 //# sourceMappingURL=users.dto.js.map

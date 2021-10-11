@@ -5,5 +5,4 @@ export declare class TweetsService {
     constructor(db: PrismaService);
     findUnique(id: number): Promise<Tweet>;
     create(data: Prisma.TweetCreateInput): Promise<Tweet>;
-    update(id: number): Promise<Tweet>;
 }

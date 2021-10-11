@@ -22,16 +22,7 @@ export class TweetsService {
     return this.db.tweet.create({ data });
   }
 
-  async update(id: number): Promise<Tweet> {
-    return this.db.tweet.update({
-      where: {
-        id: id,
-      },
-      data: {
-        curtidas: {
-          increment: 1,
-        },
-      },
-    });
-  }
+  // async update(id: number): Promise<Tweet> {
+  //   return this.db.tweet.update({  });
+  // }
 }

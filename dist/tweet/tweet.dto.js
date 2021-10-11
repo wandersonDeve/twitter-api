@@ -14,23 +14,21 @@ const class_validator_1 = require("class-validator");
 class CreateTweetDto {
 }
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.Length)(2, 240),
-    __metadata("design:type", String)
-], CreateTweetDto.prototype, "texto", void 0);
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateTweetDto.prototype, "createdAt", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.Length)(2, 10),
-    __metadata("design:type", String)
-], CreateTweetDto.prototype, "emoji", void 0);
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateTweetDto.prototype, "updatedAt", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], CreateTweetDto.prototype, "curtidas", void 0);
-__decorate([
     (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Number)
+], CreateTweetDto.prototype, "userId", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateTweetDto.prototype, "autorId", void 0);
+], CreateTweetDto.prototype, "text", void 0);
 exports.CreateTweetDto = CreateTweetDto;
 //# sourceMappingURL=tweet.dto.js.map

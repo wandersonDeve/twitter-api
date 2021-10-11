@@ -6,4 +6,6 @@ export declare class UsersController {
     constructor(service: UsersService);
     findUnique(username: string): Promise<User>;
     create(data: CreateUserDto): Promise<User>;
+    update(username: string, updateData: CreateUserDto): Promise<User>;
+    deleteOne(username: string): Promise<User>;
 }

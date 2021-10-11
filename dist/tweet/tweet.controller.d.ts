@@ -6,5 +6,4 @@ export declare class TweetsController {
     constructor(service: TweetsService);
     findUnique(id: number): Promise<Tweet>;
     create(data: CreateTweetDto): Promise<Tweet>;
-    update(id: number): Promise<Tweet>;
 }

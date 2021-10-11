@@ -1,24 +1,16 @@
-import {
-  IsNotEmpty,
-  IsNumber,
-  IsOptional,
-  IsString,
-  Length,
-} from 'class-validator';
+import { IsString, IsDate, IsNumber, IsOptional } from 'class-validator';
 
 export class CreateTweetDto {
-  @IsString()
-  @Length(2, 240)
-  texto: string;
+  @IsDate()
+  createdAt: Date;
 
-  @IsOptional()
-  @Length(2, 10)
-  emoji: string;
+  @IsDate()
+  updatedAt: Date;
 
-  @IsOptional()
   @IsNumber()
-  curtidas: number;
-
   @IsOptional()
-  autorId: string;
+  userId: number;
+
+  @IsString()
+  text: string;
 }

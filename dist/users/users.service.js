@@ -22,15 +22,6 @@ let UsersService = class UsersService {
             where: {
                 username: username,
             },
-            include: {
-                tweet: {
-                    select: {
-                        texto: true,
-                        data_postagem: true,
-                        curtidas: true,
-                    },
-                },
-            },
         });
         if (!user) {
             throw new common_1.NotFoundException();
@@ -49,6 +40,19 @@ let UsersService = class UsersService {
             data: Object.assign(Object.assign({}, data), { password: hashedPassword }),
         });
         return user;
+    }
+    async update(username, data) {
+        return this.db.user.update({
+            data,
+            where: {
+                username: username,
+            },
+        });
+    }
+    async deleteOne(username) {
+        return this.db.user.delete({
+            where: { username },
+        });
     }
 };
 UsersService = __decorate([

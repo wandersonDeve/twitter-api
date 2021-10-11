@@ -16,15 +16,6 @@ export class UsersService {
       where: {
         username: username,
       },
-      include: {
-        tweet: {
-          select: {
-            texto: true,
-            data_postagem: true,
-            curtidas: true,
-          },
-        },
-      },
     });
 
     if (!user) {

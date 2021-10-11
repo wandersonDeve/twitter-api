@@ -1,6 +1,6 @@
 export declare class CreateTweetDto {
-    texto: string;
-    emoji: string;
-    curtidas: number;
-    autorId: string;
+    createdAt: Date;
+    updatedAt: Date;
+    userId: number;
+    text: string;
 }

@@ -27,8 +27,8 @@ export class TweetsController {
     return this.service.create(data);
   }
 
-  @Put(':id/curtir')
-  update(@Param('id') id: number): Promise<Tweet> {
-    return this.service.update(id);
-  }
+  // @Put(':id/curtir')
+  // update(@Param('id') id: number): Promise<Tweet> {
+  //   return this.service.update(id);
+  // }
 }
