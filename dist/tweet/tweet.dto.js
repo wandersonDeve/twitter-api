@@ -16,10 +16,6 @@ class CreateTweetDto {
 __decorate([
     (0, class_validator_1.IsDate)(),
     __metadata("design:type", Date)
-], CreateTweetDto.prototype, "createdAt", void 0);
-__decorate([
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
 ], CreateTweetDto.prototype, "updatedAt", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
