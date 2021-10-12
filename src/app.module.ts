@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { TweetModule } from './tweet/tweet.module';
+import { FollowModule } from './follow/follow.module';
 
 @Module({
-  imports: [UsersModule, AuthModule, TweetModule],
+  imports: [UsersModule, AuthModule, TweetModule, FollowModule],
   controllers: [AppController],
   providers: [AppService],
 })

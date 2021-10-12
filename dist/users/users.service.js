@@ -22,6 +22,14 @@ let UsersService = class UsersService {
             where: {
                 username: username,
             },
+            include: {
+                tweets: {
+                    select: {
+                        text: true,
+                        updatedAt: true,
+                    },
+                },
+            },
         });
         if (!user) {
             throw new common_1.NotFoundException();

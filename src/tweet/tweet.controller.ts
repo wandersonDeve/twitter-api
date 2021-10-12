@@ -26,9 +26,4 @@ export class TweetsController {
   create(@Body() data: CreateTweetDto): Promise<Tweet> {
     return this.service.create(data);
   }
-
-  // @Put(':id/curtir')
-  // update(@Param('id') id: number): Promise<Tweet> {
-  //   return this.service.update(id);
-  // }
 }

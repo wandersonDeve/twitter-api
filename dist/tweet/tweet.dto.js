@@ -14,10 +14,6 @@ const class_validator_1 = require("class-validator");
 class CreateTweetDto {
 }
 __decorate([
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
-], CreateTweetDto.prototype, "updatedAt", void 0);
-__decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Number)
