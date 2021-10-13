@@ -1,7 +1,10 @@
 import { IsNumber, IsNotEmpty } from 'class-validator';
 
-export class CreateTweetDto {
+export class CreateFollowDto {
+  @IsNumber()
+  userId: number;
+
   @IsNumber()
   @IsNotEmpty()
-  userId: number;
+  followedId: number;
 }

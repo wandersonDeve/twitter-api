@@ -22,7 +22,12 @@ export class TweetsService {
     return this.db.tweet.create({ data });
   }
 
-  // async update(id: number): Promise<Tweet> {
-  //   return this.db.tweet.update({  });
-  // }
+  async update(id: number, data: Prisma.TweetCreateInput): Promise<Tweet> {
+    return this.db.tweet.update({
+      data,
+      where: {
+        id: id,
+      },
+    });
+  }
 }

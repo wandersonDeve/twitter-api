@@ -12,51 +12,40 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TweetsController = void 0;
+exports.LikesController = void 0;
 const common_1 = require("@nestjs/common");
-const tweet_dto_1 = require("./tweet.dto");
-const tweet_service_1 = require("./tweet.service");
+const likes_dto_1 = require("./likes.dto");
+const likes_service_1 = require("./likes.service");
 const passport_1 = require("@nestjs/passport");
-let TweetsController = class TweetsController {
-    constructor(service) {
-        this.service = service;
-    }
-    findUnique(id) {
-        return this.service.findUnique(id);
+let LikesController = class LikesController {
+    constructor(like) {
+        this.like = like;
     }
     create(data) {
-        return this.service.create(data);
+        return this.like.create(data);
     }
-    update(id, newTweet) {
-        return this.service.update(id, newTweet);
+    delete(id) {
+        this.like.delete(id);
     }
 };
 __decorate([
-    (0, common_1.Get)(':id'),
+    (0, common_1.Post)(':id'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [likes_dto_1.CreateLikeDto]),
+    __metadata("design:returntype", Promise)
+], LikesController.prototype, "create", null);
+__decorate([
+    (0, common_1.Delete)('dislike/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], TweetsController.prototype, "findUnique", null);
-__decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [tweet_dto_1.CreateTweetDto]),
-    __metadata("design:returntype", Promise)
-], TweetsController.prototype, "create", null);
-__decorate([
-    (0, common_1.Put)('update/:id'),
-    __param(0, (0, common_1.Param)('id')),
-    __param(1, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, tweet_dto_1.CreateTweetDto]),
-    __metadata("design:returntype", Promise)
-], TweetsController.prototype, "update", null);
-TweetsController = __decorate([
+    __metadata("design:returntype", void 0)
+], LikesController.prototype, "delete", null);
+LikesController = __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
-    (0, common_1.Controller)('tweets'),
-    __metadata("design:paramtypes", [tweet_service_1.TweetsService])
-], TweetsController);
-exports.TweetsController = TweetsController;
-//# sourceMappingURL=tweet.controller.js.map
+    (0, common_1.Controller)('like'),
+    __metadata("design:paramtypes", [likes_service_1.LikesService])
+], LikesController);
+exports.LikesController = LikesController;
+//# sourceMappingURL=likes.controller.js.map

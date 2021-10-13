@@ -26,4 +26,12 @@ export class TweetsController {
   create(@Body() data: CreateTweetDto): Promise<Tweet> {
     return this.service.create(data);
   }
+
+  @Put('update/:id')
+  update(
+    @Param('id') id: number,
+    @Body() newTweet: CreateTweetDto,
+  ): Promise<Tweet> {
+    return this.service.update(id, newTweet);
+  }
 }

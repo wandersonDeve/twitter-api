@@ -9,37 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TweetsService = void 0;
+exports.LikesService = void 0;
 const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma.service");
-let TweetsService = class TweetsService {
+let LikesService = class LikesService {
     constructor(db) {
         this.db = db;
     }
-    async findUnique(id) {
-        const tweet = await this.db.tweet.findUnique({
+    async create(data) {
+        return this.db.like.create({ data });
+    }
+    async delete(id) {
+        const existing = this.db.like.findUnique({
             where: { id },
         });
-        if (!tweet) {
+        if (!existing) {
             throw new common_1.NotFoundException();
         }
-        return tweet;
-    }
-    async create(data) {
-        return this.db.tweet.create({ data });
-    }
-    async update(id, data) {
-        return this.db.tweet.update({
-            data,
-            where: {
-                id: id,
-            },
+        return this.db.like.delete({
+            where: { id },
         });
     }
 };
-TweetsService = __decorate([
+LikesService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [prisma_service_1.PrismaService])
-], TweetsService);
-exports.TweetsService = TweetsService;
-//# sourceMappingURL=tweet.service.js.map
+], LikesService);
+exports.LikesService = LikesService;
+//# sourceMappingURL=likes.service.js.map
