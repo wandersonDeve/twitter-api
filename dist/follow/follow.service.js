@@ -17,7 +17,7 @@ let FollowsService = class FollowsService {
         this.db = db;
     }
     async follow(data, id) {
-        const existing = await this.db.follow.findUnique({ where: { id } });
+        const existing = await this.db.follow.findUnique({ where: { id: id } });
         if (!existing) {
             await this.db.follow.create({
                 data,

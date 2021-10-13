@@ -8,7 +8,7 @@ export class FollowsService {
   constructor(private db: PrismaService) {}
 
   async follow(data: CreateFollowDto, id: number): Promise<Follow> {
-    const existing = await this.db.follow.findUnique({ where: { id } });
+    const existing = await this.db.follow.findUnique({where:{id:id}});
 
     if (!existing) {
       await this.db.follow.create({
