@@ -58,16 +58,67 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Para Rodar o Projeto
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# Criar Usuario - acessar Formato JASON
+http://localhost/3000/users/create_account
 
-## Stay in touch
+# Fazer login - acessar Formato JASON
+http://localhost/3000/auth/login
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Encontrar Usuario unico
+http://localhost/3000/users/(username)
 
-## License
+# Atualizar dados do usuario - acessar Formato JASON
+http://localhost/3000/users/update/(username)
 
-Nest is [MIT licensed](LICENSE).
+# Deleta um usuario
+http://localhost/3000/users/delete/(username)
+
+# Criar um Tweet - acessar Formato JASON
+http://localhost/3000/tweets
+
+# Buscar Tweet por ID - onde id=numero
+http://localhost/3000/tweets/(id)
+
+# Atualizar Tweet por ID - acessar Formato JASON
+http://localhost/3000/tweets/update/(id)
+
+# Like um post - onde id=numero - acessar Formato JASON
+http://localhost/3000/like/(id)
+
+# Dislike um post
+http://localhost/3000/like/dislike/(id)
+
+# Follow and Unfollow - id referente a pessoa a ser seguida
+http://localhost/3000/follow/(id)
+
+```
+
+## Formato JASON
+
+```JSON
+ // Para criar e atualizar a conta 
+  {
+    "username":"usernameTeste",
+    "email":"teste_email@email.com",
+    "password":"12345678",
+    "displayName":"Name",
+    "birth":"12/01/1234",
+    "bio":"No pain no gain"
+}
+
+// Para fazer Login
+{
+    "username":"usernameTeste",
+    "password":"12345678"
+}
+
+// Para criar e atualizar um Tweet
+{
+    "text": "Fabio é o guitarrista da banda Quinta Justa, e Marcus é o baixista",
+    "userId":2
+}
+
+```
