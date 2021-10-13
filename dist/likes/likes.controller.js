@@ -29,7 +29,7 @@ let LikesController = class LikesController {
     }
 };
 __decorate([
-    (0, common_1.Post)(':id'),
+    (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [likes_dto_1.CreateLikeDto]),

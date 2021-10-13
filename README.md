@@ -99,7 +99,7 @@ http://localhost/3000/follow/(id)
 ## Formato JASON
 
 ```JSON
- // Para criar e atualizar a conta 
+ // Para criar e atualizar a conta
   {
     "username":"usernameTeste",
     "email":"teste_email@email.com",
@@ -121,4 +121,9 @@ http://localhost/3000/follow/(id)
     "userId":2
 }
 
+// Para dar like em um tweet
+{
+  "tweetId": 3,
+  "userId": 2
+}
 ```

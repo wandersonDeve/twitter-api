@@ -16,7 +16,7 @@ import { AuthGuard } from '@nestjs/passport';
 export class LikesController {
   constructor(private like: LikesService) {}
 
-  @Post(':id')
+  @Post()
   create(@Body() data: CreateLikeDto): Promise<Like> {
     return this.like.create(data);
   }

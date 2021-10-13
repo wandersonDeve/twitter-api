@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Like, Prisma } from '@prisma/client';
+import { identity } from 'rxjs';
 import { PrismaService } from '../prisma.service';
 import { CreateLikeDto } from './likes.dto';
 
@@ -8,7 +9,7 @@ export class LikesService {
   constructor(private db: PrismaService) {}
 
   async create(data: CreateLikeDto): Promise<Like> {
-    return this.db.like.create({ data });
+    return this.db.like.create({ data, include: { Tweet: true } });
   }
 
   async delete(id: number): Promise<Like> {

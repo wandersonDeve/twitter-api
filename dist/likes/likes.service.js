@@ -17,7 +17,7 @@ let LikesService = class LikesService {
         this.db = db;
     }
     async create(data) {
-        return this.db.like.create({ data });
+        return this.db.like.create({ data, include: { Tweet: true } });
     }
     async delete(id) {
         const existing = this.db.like.findUnique({
