@@ -6,5 +6,5 @@ export declare class UsersService {
     findUnique(username: string): Promise<User>;
     create(data: Prisma.UserCreateInput): Promise<User>;
     update(username: string, data: Prisma.UserCreateInput): Promise<User>;
-    deleteOne(username: string): Promise<User>;
+    deleteOne(id: number): Promise<User>;
 }

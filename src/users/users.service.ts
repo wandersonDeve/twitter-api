@@ -1,5 +1,6 @@
 import {
   Injectable,
+  UnauthorizedException,
   NotFoundException,
   ConflictException,
 } from '@nestjs/common';
@@ -63,9 +64,24 @@ export class UsersService {
     });
   }
 
-  async deleteOne(username: string): Promise<User> {
+  async deleteOne(id: number): Promise<User> {
+    const userAuth = await this.db.user.findUnique({
+      where: { id },
+      select: {
+        id: true,
+      },
+    });
+
+    if (!userAuth) {
+      throw new NotFoundException();
+    }
+
+    if (userAuth.id !== id) {
+      throw new UnauthorizedException();
+    }
+
     return this.db.user.delete({
-      where: { username },
+      where: { id },
     });
   }
 }

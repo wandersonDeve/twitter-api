@@ -57,9 +57,21 @@ let UsersService = class UsersService {
             },
         });
     }
-    async deleteOne(username) {
+    async deleteOne(id) {
+        const userAuth = await this.db.user.findUnique({
+            where: { id },
+            select: {
+                id: true,
+            },
+        });
+        if (!userAuth) {
+            throw new common_1.NotFoundException();
+        }
+        if (userAuth.id !== id) {
+            throw new common_1.UnauthorizedException();
+        }
         return this.db.user.delete({
-            where: { username },
+            where: { id },
         });
     }
 };

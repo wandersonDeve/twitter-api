@@ -7,5 +7,5 @@ export declare class UsersController {
     findUnique(username: string): Promise<User>;
     create(data: CreateUserDto): Promise<User>;
     update(username: string, updateData: CreateUserDto): Promise<User>;
-    deleteOne(username: string): Promise<User>;
+    deleteOne(id: number): Promise<User>;
 }

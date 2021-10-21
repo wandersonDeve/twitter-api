@@ -30,8 +30,8 @@ let UsersController = class UsersController {
     async update(username, updateData) {
         return this.service.update(username, updateData);
     }
-    deleteOne(username) {
-        return this.service.deleteOne(username);
+    deleteOne(id) {
+        return this.service.deleteOne(id);
     }
 };
 __decorate([
@@ -60,10 +60,10 @@ __decorate([
 ], UsersController.prototype, "update", null);
 __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
-    (0, common_1.Delete)('/delete/:username'),
-    __param(0, (0, common_1.Param)('username')),
+    (0, common_1.Delete)('/delete/:id'),
+    __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "deleteOne", null);
 UsersController = __decorate([

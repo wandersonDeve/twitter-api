@@ -38,8 +38,8 @@ export class UsersController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Delete('/delete/:username')
-  deleteOne(@Param('username') username: string): Promise<User> {
-    return this.service.deleteOne(username);
+  @Delete('/delete/:id')
+  deleteOne(@Param('id') id: number): Promise<User> {
+    return this.service.deleteOne(id);
   }
 }
